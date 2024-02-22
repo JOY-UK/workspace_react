@@ -50,12 +50,18 @@ function App() {
           <h3>게시글</h3>
         </div>
 
+        <div>
+          <input type='text'onChange={() => {
+            console.log(1)
+          }}/>
+        </div>
+
         <MainBoard board_list={board_list}/>
+        
         {
-          isShow ? <DetailBoard board_list={board_list} idx={}/> : ''
+          isShow ? <DetailBoard/> : ''
         }
 
- 
     </div>
   );
 }
@@ -82,7 +88,7 @@ function MainBoard(props) {
                 <td>{board.boardNo}</td>
                 <td>
                   <span onClick={() => {
-                    setIsShow(true)
+          
                   }}>{board.title}</span>
                 </td>
                 <td>{board.writer}</td>
